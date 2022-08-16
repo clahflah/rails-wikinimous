@@ -1,0 +1,16 @@
+<div class="show">
+  <h1 class="text-center">WikiClay</h1>
+  <div class= "show-text">
+    <h2><%= @article.title %></h2>
+    <p><%= @article.content %></p>
+
+    <%= link_to "Delete",
+          article_path(@article),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'delete'
+          %>
+    <%= link_to "Update",
+          edit_article_path(@article.id),
+          data: {turbo_method: :update}, class:'update'
+          %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="page">
+  <h1>WikiClay</h1>
+  <% @articles.each do |article| %>
+  <div class='articles'>
+    <h2><%= link_to article.title, article_path(article) %></h2>
+    <div class="article-bottom">
+      <p><%= article.content %></p>
+      <%= link_to "Delete",
+          article_path(article),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'delete'
+          %>
+    </div>
+  </div>
+    <% end %>
+</div>
